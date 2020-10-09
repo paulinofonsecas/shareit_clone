@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Shareit clone',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         textTheme: TextTheme(
             bodyText1: TextStyle(
               color: Colors.black,
