@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class VideoPane extends StatelessWidget {
   const VideoPane({
     Key key,
@@ -11,20 +10,22 @@ class VideoPane extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(top: 10),
       child: Column(
         children: [
           Container(
             width: double.infinity,
-            height: 250,
+            height: size.height * 0.45,
             child: Stack(
               children: [
                 Container(
                   width: double.infinity,
+                  height: double.infinity,
                   child: Image.asset(
                     'assets/$img',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
                 Center(

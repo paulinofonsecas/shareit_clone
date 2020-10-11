@@ -11,8 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -20,13 +18,13 @@ class _HomePageState extends State<HomePage> {
         body: SingleChildScrollView(
           child: _buildSeccaoPrincipal(context),
         ),
-        bottomNavigationBar: _buildBottomNavigationBar(),
       ),
     );
   }
 
   Column _buildSeccaoPrincipal(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(20),
@@ -65,87 +63,34 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildTopPanel() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    return Wrap(
+      spacing: 8,
+      runSpacing: 10,
       children: [
-        Row(
-          children: [
-            CustomIconButtom(
-              onTap: () {},
-              icon: Icons.send,
-              title: 'Enviar',
-            ),
-            CustomIconButtom(
-              onTap: () {},
-              icon: Icons.arrow_circle_down_outlined,
-              title: 'Receber',
-            ),
-            CustomIconButtom(
-              onTap: () {},
-              icon: Icons.snippet_folder,
-              notification: List.generate(85, (index) => index),
-              title: 'Local',
-            ),
-            CustomRoundedIconButton(
-              onTap: () {},
-              icon: Icons.insert_invitation_rounded,
-              title: 'Convidar',
-            )
-          ],
+        CustomIconButtom(
+          onTap: () {},
+          icon: Icons.send,
+          title: 'Enviar',
         ),
-        CustomIconBloc()
-      ],
-    );
-  }
-
-  BottomNavigationBar _buildBottomNavigationBar() {
-    return BottomNavigationBar(
-      currentIndex: _currentIndex,
-      onTap: (newIndex) {
-        setState(() => _currentIndex = newIndex);
-      },
-
-      unselectedItemColor: Colors.black,
-      selectedItemColor: Colors.blue,
-      elevation: 8,
-
-      // Configuração do icon
-      selectedIconTheme: IconThemeData(
-        color: Colors.blue,
-        size: 28,
-      ),
-      unselectedIconTheme: IconThemeData(
-        color: Colors.black,
-        size: 28,
-      ),
-
-      // Configureção do titlo
-      selectedLabelStyle: TextStyle(
-        fontSize: 14,
-      ),
-      unselectedLabelStyle: TextStyle(
-        fontSize: 14,
-      ),
-
-      showUnselectedLabels: true,
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
+        CustomIconButtom(
+          onTap: () {},
+          icon: Icons.arrow_circle_down_outlined,
+          title: 'Receber',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.file_download),
-          label: 'Transferir',
+        CustomIconButtom(
+          onTap: () {},
+          icon: Icons.snippet_folder,
+          notification: List.generate(85, (index) => index),
+          title: 'Local',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.gamepad_outlined),
-          label: 'Jogos',
+        CustomRoundedIconButton(
+          onTap: () {},
+          icon: Icons.insert_invitation_rounded,
+          title: 'Convidar',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.psychology_outlined),
-          label: 'Me',
-        ),
+        Expanded(
+          child: CustomIconBloc(),
+        )
       ],
     );
   }

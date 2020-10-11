@@ -21,37 +21,34 @@ class CustomIconButtom extends StatelessWidget {
       margin: EdgeInsets.only(right: 10),
       child: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(6.0),
-            child: GestureDetector(
-              onTap: onTap,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 45,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(90),
-                    ),
-                    child: Center(
-                      child: Icon(
-                        icon,
-                        size: 22,
-                        color: Colors.white,
-                      ),
+          GestureDetector(
+            onTap: onTap,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(90),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      icon,
+                      size: 22,
+                      color: Colors.white,
                     ),
                   ),
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.blue,
-                    ),
+                ),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           if (notification != null)
