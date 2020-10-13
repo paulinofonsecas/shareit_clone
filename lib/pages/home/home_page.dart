@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildTopPanel() {
     return Wrap(
-      spacing: 8,
+      spacing: 5,
       runSpacing: 10,
       children: [
         CustomIconButtom(
@@ -88,9 +88,6 @@ class _HomePageState extends State<HomePage> {
           icon: Icons.insert_invitation_rounded,
           title: 'Convidar',
         ),
-        Expanded(
-          child: CustomIconBloc(),
-        )
       ],
     );
   }
