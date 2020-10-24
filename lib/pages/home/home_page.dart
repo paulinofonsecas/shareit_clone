@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'componentes/custom_icon_bloc.dart';
 import 'componentes/custom_icon_button.dart';
 import 'componentes/custom_rounded_icon_button.dart';
 import 'componentes/video_pane.dart';

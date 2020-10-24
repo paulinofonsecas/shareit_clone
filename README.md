@@ -1,6 +1,6 @@
-# shareit_clone
+# Shareit clone
 
-A new Flutter project.
+<img src=""> | <img src="">
 
 ## Getting Started
 

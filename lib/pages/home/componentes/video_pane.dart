@@ -22,25 +22,14 @@ class VideoPane extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  height: double.infinity,
                   child: Image.asset(
                     'assets/$img',
                     fit: BoxFit.fill,
                   ),
                 ),
                 Center(
-                  child: Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.5),
-                      borderRadius: BorderRadius.circular(90),
-                    ),
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white,
-                      size: 40,
-                    ),
+                  child: CustomPlayIcon(
+                    icon: Icons.play_arrow,
                   ),
                 ),
               ],
@@ -73,6 +62,32 @@ class VideoPane extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomPlayIcon extends StatelessWidget {
+  const CustomPlayIcon({
+    Key key,
+    @required this.icon,
+  }) : super(key: key);
+
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(
+        color: Colors.black.withOpacity(0.5),
+        borderRadius: BorderRadius.circular(90),
+      ),
+      child: Icon(
+        icon,
+        color: Colors.white,
+        size: 40,
       ),
     );
   }
