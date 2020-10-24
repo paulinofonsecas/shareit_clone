@@ -1,6 +1,6 @@
 # Shareit clone
 
-<img src=""> | <img src="">
+<img width="300" src="home.png"> | <img width="300" src="me.png">
 
 ## Getting Started
 
